@@ -1,0 +1,864 @@
+태그정보를 현재 일상생활에서 사용하는지 판단하기 위한사이트
+caniuse.com 여기서 검색하면 웹브라우저가 어디부터 어디까지 호환되는지
+그리고 사용하면 전세계적으로 몇퍼센트의 인구가 이용할수있다는 의미 엄청중요함
+codepen.io 코드를통해 어떻게 꾸몄는지 알수있는 페이지  지금은 이해하기 어렵지만 나중에는 점차적으로
+이해하기 쉬워질듯함
+https://fontello.com/ 폰트의 이미지들을 사용할수있는 페이지
+https://thenounproject.com = svg를 구할수있는사이트 ( svg를 다운로드해서 fontello.com 사이트에 다운로드한svg를 드래그해서 가져다 놓으면 코드를 생성해줌
+(엄청나게 유용한 사이트들임 fontello / thenounproject )
+
+
+*style*
+
+head 태그안에 들어가며 html태그의 중복되는값을 줄일수있음
+아래 태그대로 하면 글자가 다 빨간색으로 변함
+굉장히 중요한태그
+style태그안에 a라는것은 selector라고하며
+이 웹페이지의 모든 a태그를 설정한다라는 의미를 가짐
+
+
+style태그안에 색상을 지정하는방법은 3가지로 나누어짐
+
+1) style {color:red;} 
+2) style {color:rgb("255","100","200")}  = r(레드)g(그린)b(블루) 세가지색상을 섞어서 나타내는방법
+3) style {color:"#ff0000"} hex의 경우는 16진수로 이루어져있고 정해진코드가 있음 일반적으로 쓰이진않음
+
+
+
+style태그의 글자색깔을 바꾸는 방법은 2가지의 방법이 있음
+
+ex) 1) 헤드태그안에 style태그를 입력하는방법
+<head>
+<style>
+a {
+   color:red;  (색깔은 입력값에따라변함)
+}  
+</style> 
+
+
+</head>  
+헤드 태그안에 들어가는것은 style 태그라 부름
+
+ex) 2) 바디태그안에 style태그를 입력하는방법
+
+<body>
+<h1 style="color:red">Hello World</h1>
+</body>
+
+
+★부분적으로 style태그를 사용하고 싶을 때★
+아래와 같이 태그를 설정해놓으면 전체글자는 검은색이지만
+body태그안에 style태그를 걸어놓은 MiHyeon은 빨간색으로 표시됨
+<head>
+<style>
+a {
+   color:black;  (색깔은 입력값에따라변함)
+}  
+</style>
+</head>
+
+<body>
+  <li><a href="1.html">JongBin</a></li>
+  <li><a href="2.html" style="color:red"> MiHyeon</a></li>
+</body>
+body 태그안에 style이 들어가는 경우는 style 속성이라고 부름
+
+★웹사이트 상에서 보여지는 밑줄을 없애고 싶을 때★
+<head>
+<style>
+"oo"{
+   text-decoration:none;
+   }
+
+</style>
+</head>
+
+style 태그는 정보를 입력하고 마지막에 항상 세미콜론 입력해야함
+안그러면 어디서부터 어디까지가 하나의 값인지 인식하지못함
+무조건 style속성 입력후 마지막에 ; 입력
+
+
+글자크기 줄이거나크게하고싶을때
+h1 { 
+   font-size:"oo"px;
+   }
+위 h1태그는 달라질수있음
+
+글자정렬 text-align:"oo"
+
+글자를 가운데로 정렬하고 싶을때
+
+h1 {
+   font-size:"oo"px; text-align:center;
+   }
+
+글자를 왼쪽으로 정렬하고 싶을때
+
+h1 {
+   font-size:"oo"px; text-align:left;
+   }
+글자를 오른쪽으로 정렬하고 싶을때
+
+h1 {
+   font-size:"oo"px; text-align:right;
+   }
+
+글자를 왼쪽, 오른쪽 둘다 정렬하고 싶을때
+
+h1 {
+   font-size:"oo"px; text-align:justify;
+   }
+
+font-family:"글씨체(1)", "글씨체(2)", "글씨체(3)";
+이 의미는 글씨체(1)이 없으면 (2)가 나오게 (2)가없으면 글씨체(3)이 나오게 대체되게 하는 값임
+그래서 패밀리라고 지정함 
+또한 monospace는 글자의폭이 균등하게 나오게 설정할수있게함
+
+Serif란 문자의 끝 부분에 장식되어 있는 부가적인 짧은 선을 Serif라고 한다.
+원하지않을경우 sans-serif 라고 하면 글꼴만 변경되고 끝부분에 장식되는부분만 생기지않음
+
+font-weight:bold; = 글자를 굵게해주는값
+
+line-height:"oo" = 글자간 간격을말함
+
+
+font-size:"oo"px; = 브라우저 설정이 바뀌어도 바뀌지않고 수치고정
+font-size"oo"rem; = 브라우저 설정이 바뀌면 폰트의 수치도 변함
+
+
+style태그안에서 (selector)선택자의 우선순위는 id>class>일반태그임
+
+id는 style을지정할때 한가지만 지정해서 쓰는이름이며
+고유한id 하나밖에 쓸수없다.
+ex)
+
+<head>
+<style>
+  .saw{
+  color:gray;
+  }
+  #active{
+  color:red;
+  }
+</style>
+</head>
+<body> 
+<a href="1.html" class="saw">HTML</a
+>
+<a href="2.html" class="saw" id="active">CSS</a>  ("active"는 달라질수있음)
+</body>
+
+위와같이 태그입력하면 HTML은 회색 CSS는 빨간색으로 설정됨
+id태그인 #active의 경우 .saw와 같이 쓰였지만 우선순위가 높기때문에 빨간색으로 표기됨
+
+
+class는 하나의 그룹으로 묶어서 스타일을 지정하고자할때 쓰임
+class는 하나의 문서에 여러번 쓸수있다. 고유값아님
+class="oo" 
+
+ex) 
+<head>
+<style>
+  .saw{
+  color:gray;
+  }
+</style>
+</head>
+<body> 
+<a href="1.html" class="saw">HTML</a
+>
+<a href="2.html" class="saw active">CSS</a>
+</body>
+
+위 태그의 의미는 class="saw"라는 그룹의 색깔을 회색으로 
+변경하고자 할때를 의미함
+
+<head>
+<style>
+  .saw{
+  color:gray;
+  }
+  .active{
+   color:red;
+   }
+</style>
+</head>
+<body> 
+<a href="2.html" class="saw active">CSS</a>
+</body>
+
+위 태그의 의미는 class그룹인 saw와 active 두가지가 쓰인형태임
+하지만 확인해보면 빨간색으로 표시가 되어있음.
+그 이유는 style태그안에 .saw보다 .active가 나중에 쓰였기 때문이며
+그 의미는 같은속성일경우 나중에 쓰이는 태그가 더 중요하다고 인식이 되기때문
+
+
+*아래와같이 값을 입력하면 ul안에 있는 li태그는 모두 빨간색으로 표시됨*
+ (ul태그안에서 또 분리하고싶을땐  style태그 밑에 ul li {color:red;} 입력하면 됨
+
+<style>
+  ul li{
+    color:red;
+  }
+</style>
+  </head>
+  <body>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+
+    <ol>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ol>
+
+    <ul>
+      HTML
+      CSS
+      JavaScript
+    </ul>
+</body>
+
+
+배경을 표현하고싶을땐 background-color:"색상"; 입력하면 됨
+하나의 값을 같이 입력하고싶을땐 아래처럼 , 입력하면 ul태그ol태그 둘다 적용됨
+  ul,ol{
+    background-color: powderblue;
+  }
+
+
+
+★ 아래와 같이 태그했을 때 ★
+
+
+body태그 안에 있으며 제일위에있는 ol태그안에 id값을 입력하고나서
+head태그 안에 있는 #jong>li의 의미는 ol의 자식태그인
+<li>HTML</li> <li>CSS</li> <li>JavaScript</li>에만{ border:1px solid red; color:blue; } 값을 입력하고싶을때 사용됨
+만약 위처럼 id값없이 head태그안에 ol{border:1px solid red; color:blue;} 입력한다면 CSS태그안의 손자태그까지 모두 적용됨
+<ol>
+
+<style>
+  ul li{
+    color:red;
+  }
+  #jong>li{
+    border:1px solid red;
+    color:blue;
+  }
+  ul,ol{
+    background-color: powderblue;
+  }
+</style>
+<body>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+
+    <ol id="jong">
+      <li>HTML</li>
+      <li>CSS
+        <ol>
+          <li>selector</li>
+          <li>decoration</li>
+        </ol>
+      </li>
+      <li>JavaScript</li>
+    </ol>
+  </body>
+
+
+★가상클래스선택자를 선택했을때의 변화★
+a:visited{color:red;} = 방문한사이트가 빨간색으로 표시됨
+a:hover{color:yellow;} = 커서를 가져다놓으면 노란색으로 표시됨
+a:active{color:green;} = 커서를 선택하고있을때 초록색으로 표시됨
+a:focus{color:white;} = 탭키를 누르면 하얀색탭박스생성됨 엔터누르면 링크통해서 이동가능
+focus의 경우 input태그랑 혼합해서 이용가능하며 focus는 제일 마지막에 이용하는것이좋음 (여러가지 이유로)
+아래와 같이 태그 입력시 text박스 클릭시 배경은 검은색 글자의 색상은 흰색으로 변함
+<head>
+<style>
+input:focus {background-color:black; color:white;}
+</style>
+</head>
+
+<body>
+<input type="text">
+</body>
+
+
+
+
+*주석*
+style 태그를 사용할때 주석을 달아놓는법 (element는 태그랑 같은말)
+/*
+block level element  
+*/
+위 용어의 의미는 화면전체를 쓰는 태그들을 사용한다라는의미
+
+
+/*
+inline element
+*/
+위 용어의 의미는 자기 자신의 부피만큼을 갖는 태그를 사용한다라는의미
+
+*css box model 태그들*
+margin=border의 테두리 바깥부분의 설정
+border=글자부분의 테두리설정
+padding=내용과 테두리 사이의 간격설정
+content= 텍스트나 이미지의 내용설정
+width=글자의폭
+hight=글자의높이
+display:block;= 글자의 화면전체
+display:inline;= 글자가 가진 자기자신의부피
+border-style:"종류많음"; 단선인경우 solid
+
+전부 다 이렇게 사용함
+ex)
+<head>
+<style>
+
+"selector"{
+       border:5px solid red;
+       padding:20px;
+       margin:20px;
+       display:block;
+       width:100px;
+       }
+</style>
+</head>
+
+박스테두리가 아닌 밑줄만 표시하고싶을땐
+
+"selector"{
+       border-bottom:"oo"px solid black;
+       }
+
+※box 테두리 만들땐 검사버튼 이용해서 margin, border, padding 값 확인하면서 사용하기
+
+*그리드*
+
+<div> = 아무의미가없고 디자인으로만 사용되는 태그
+div는 block level emelemt와 동일하게 사용되므로 화면 전체를 사용하기때문에 줄바꿈기능이 됨
+<span> = 아무의미가없고 디자인으로만 사용되는 태그
+span은 inline level emelemt와 동일하게 사용되며 자기자신의 부피만큼 사용함
+
+div의 부모태그는 div임
+ex)
+<div>
+<div>"종빈이와미현이"</div>
+</div>
+
+
+*mediaquery*
+미디어태그(반응형디자인)는 아래 태그와 같이 입력하면
+화면의 크기가 800px이상인경우 보이지않게만든다는 의미
+반대로 min값이 max로 변경되면 800px이하인경우 보이지않게 만든다는의미
+<style>
+      div{
+        border:10px solid green;
+        font-size:60px;
+      }
+
+      @media(min-width:800px){
+      div{
+        display:none;
+      }
+    }
+    </style>
+
+
+css태그를 사용할때 중복을 피하는방법
+같은시트에 같은태그가 중복적으로 사용될 때 
+ex) <link rel="stylesheet" href="style.css">  ("style.css"는 변할수있음)
+위 값을 붙여넣고
+ 실제로 style.css라는 파일을 만들어 style태그값을 안에 붙여넣으면
+<link rel="stylesheet" href="style.css"> 한줄만 붙여넣기를 함으로써 중복되는것들을 방지할수있음
+가치적으로 훨씬높음
+
+
+
+다양한 선택자들
+* = 모든태그를 의미함
+"a"+"b"= 입력시 옆에있는 태그가 선택됨
+"a"~"b"= 입력시 a와 b사이까지의 모든 태그가 선택됨
+"a">"b"= 입력시 a의 직계자식인 b만을 선택하게됨
+"oo":first-child=입력시 중복된 값중에 첫번째로 입력한 값만 선택됨
+ex)
+
+<a>
+<orange>
+<orange>
+<orange>
+</a>
+orange:first-child 또는 a orange:first-child 입력하면됨 ( a orange:first-child 가 정확한표현)
+
+
+
+cascading규칙 (우선순위)
+하나의 태그에 css언어가 중첩되었을때 우선순위를 어떻게 할것인가?
+style>id>class>기본태그
+
+
+*box-sizing*
+box-sizing:border-box; = 값이다른 border를 같은값으로 설정해주는 것
+
+*position*
+position은 left와 right 중 left우선 top과 bottom 중 top우선적용
+{position:relative; left:100px; top:100px;} =오른쪽,위로 100px만큼 이동
+{position:static; left:100px; top:100px;} =이동안함
+
+
+★position:absolute/fixed★-어려움
+position:absolute(자식태그)의경우 position:relative(부모태그)설정되면 부모태그로 이동되며
+ 본인이 가지고있던 크기는 사라지며 본인의 크기만큼 변한다
+여기서 부모태그들중 relative 설정되지않으면 없는것으로 인식하며 설정된 relative부모태그만 부모로 인식함
+
+absolute는 left,top,right,bottom의 설정해줘야함
+
+ex) {position:absolute; left:0; top:0;}(자식태그) {position:relative}(부모태그) 부모로 이동
+ex) {position:absolute;}(자식태그) {position:relative}(부모태그) 부모밑으로 이동
+ex) {position:absolute; left:0; top:0;} 웹사이트기준 0,0으로 이동
+
+fixed = absolute와 거의 흡사하지만 {position:fixed} 로하게되면 스크롤이 있다고 가정하에 밑으로 내려도 위치 고정됨
+또한 width,height값을 지정하지않으면 부모가 없어지기때문에 본인의 크기만큼 변함
+ex) {position:fixed; left:0; top:0;} 웹사이트기준 0,0으로 이동
+ex) {position:fixed;} 부모밑으로 이동
+
+
+*flex*
+각각의 엘리먼트들이 화면전체를 사용하게함 (수평 또는 수직)
+low로 할때는 행 (밑으로) column으로 할때는 열로 (옆으로)
+
+flex는 부모태그 display:flex로 사용됨 그리고 밑으로 flex-direction:"column" 또는"row"로 행또는 열이동시킴
+ex) .container{background-color:blue;   =.containrer 부모태그
+  display:flex;
+  height:200px;
+  flex-direction:column;
+}
+
+ex).item:nth-child(2){          
+  flex-basis:200px;
+}
+nth-child(2) .item 그룹의 두번째자식을 의미
+flex-basis:200px; = 200픽셀만큼의 기본설정을 한다는 뜻 row로 설정되면 행으로 200픽셀만큼 column로 설정되면 200픽셀만큼 행이 설정됨 (높이)
+.item{background-color:green;       =.item 자식태그
+
+flex-grow = 전체화면의 레이아웃을 설정 중요한태그
+ex) .container{background-color:blue;
+  height:200px;
+  display:flex;
+  flex-direction:row;        (그냥 기본설정임  display-flex이 들어가야함)
+}
+
+.item{background-color:green;
+      color:yellow;
+      border:1px solid yellow;
+      flex-grow:1;}
+
+<div class="container">
+<div class="item">1</div>
+<div class="item">2</div>
+<div class="item">3</div>
+<div class="item">4</div>
+<div class="item">5</div>
+
+</div>
+
+했을때 모든 row의 설정값이 1이 되며 곧 item1~5가 똑같은 1의 값을 가지며 화면을 균등하게 채움
+
+일부만 더 크게 하고싶을때는 예를들어 2의 item그룹을 더 크게하고자 할때
+ex)
+.item{background-color:green;
+      color:yellow;
+      border:1px solid yellow;
+      flex-grow:1;}
+
+.item:nth-child(2){flex-grow:2;}
+ 설정하면 1,3,4,5는 1의 값을 가지지만 2의 경우 2의 값을 가지며 화면 전체를 1:2:1:1:1 비율로채움
+
+flex-shrink
+shrink는 화면이 작아지면서 여백이 없어질때 나머지값들도 줄어들게 되는데 그걸 설정할수있음
+예를 들어  
+.item:nth-child(2){
+      flex-shrink:0;
+      flex-basis:300px;}
+으로 설정했을때 설정한 값들이 화면이 작아지면서 2의 값이 줄어들지 않게할수있음
+
+또는 shrink:1로 설정을 하면 화면이 줄어들였을때 2의 원래크기를 줄여가면서 나머지값을 보이게할수있음
+
+더 나아가서 
+
+      .item:nth-child(2){
+      flex-shrink:2;
+      flex-basis:600px;}
+
+      .item:nth-child(1){
+      flex-shrink:1;
+      flex-basis:600px;}
+
+위와같이 shrink 값을 1과 2로 설정했을때에는 화면을 줄였을때 child(2)는 2비율로 child(1)은 1의 비율로 크기를 줄여가면서 나머지값을 보이게할수있음 
+
+layout을 짜는법
+
+  .a {display:flex;
+              flex-direction:column;}
+
+header{border-bottom:1px solid gray;
+padding-left:20px;}
+
+footer{border-top:1px solid gray;
+      padding-left:20px;}
+
+main{padding-left:10px;}
+
+.b{display:flex;}
+.b nav {border-right:1px solid gray;}
+.b aside{border-left:1px solid gray;}
+
+nav와 aside의 내용고정하고싶을때
+nav, aside{flex-basis:150px;
+flex-shrink:0;}    (flex-basis:150px;은 화면크기를 150픽셀로 해놓은것 별의미없음)
+
+<body>
+<div class="a">
+<header>
+</header>
+<section class="b">
+<nav>
+</nav>
+<main>
+</main>
+<aside>
+</aside>
+</section>
+<footer>
+</footer>
+</div>
+</body>
+
+
+flex 각종속성들
+flex-wrap =값의내용이 웹페이지보다 커질때 자동으로 줄바꿈이 되면서 바로아랫줄에 값의내용이 표시됨
+align-items:flex-start = 위에서 시작
+align-items:flex-end= 끝에서 시작
+align-items:center = 중간에서 시작
+align-items:baseline 숫자밑선으로 정렬
+align-items:strech = 내용을 위아래로 늘리면서 꽉채움
+
+justify-content 
+justify-content:flex-start =수평으로 위에서 시작
+justify-content:flex-end =수평으로 끝에서 시작 (오른쪽)
+justify-content:space-between = 값과 값사이에 일정하게 간격을 줌 (수평)
+justify-content:center = 값을 중간에서 시작하게함 (수평)
+justify-content:space-around =between과 흡사하나 수평의 끝과끝(왼쪽과오른쪽) 부분도 일정하게 간격을 줌
+ 
+align-content
+align-content:flex-start = 위에서시작 
+align-content:flex-end = 끝에서시작
+align-content:center: 중간에서시작
+align-content:space-between: 값과 값사이에 일정한간격을 줌 (다만 값이 화면밖으로 넘어가게되면 자동 줄바꿈으로 해서 간격을 두기때문에 다른 between과 차이점이 있음)
+align-content:space-around: between과 흡사하나 위아래 간격도 일정하게 띄움)
+align-content:strech =기본값이며 값의 내용을 위아래로 늘려놓음
+
+align-self
+align-self:auto = 자동으로 특정값 설정 (기본값으로 설정되어있음)
+align-self:flex-start =  특정값 위에서 시작
+align-self:flex-end = 특정값 밑에서 시작
+align-self:center = 특정값 중간에서 시작
+align-self:baseline = 특정값 시작라인에 맞춰서 시작
+align-self:strech = 특정값 위아래로 늘려서 채움
+
+order 값의 순서를 바꿈
+order:0 기본값
+order:"oo" 값의 순서를 바꿈  (+- 안됨)
+
+ex)
+<div>
+<header>
+</header>
+<section>
+<nav>
+</nav>
+<main>
+</main>
+<aside>
+</aside>
+</section>
+</div>
+
+위 순서대로라면 section안에 nav main aside 순서이지만 aside{order:-1} 입력시 화면에 보이는 순서는 nav aside main으로 표시됨
+
+
+column
+
+column-conut:"oo"; = "oo" 숫자에 맞춰 단을 맞춤 웹페이지 크기 줄여도 그대로
+column-width:"oo"px; = "oo"픽셀에 맞춰 단을 나누며 웹페이지 크기를 줄이면 단을 조정함
+※ 폭을 중시하면 width사용하고 단을 중시하면 count사용하며 둘다 사용할수도있음
+column-gap:"oo"px; = 문단의 간격을 설정
+text-align:justify; 글자 왼쪽오른쪽 정렬
+column-rule-style: 문단간의 선을 설정 (단선 실선, 등)
+column-rule-width: 문단간 나누는 선의 굵기를 설정
+column-rule-color: 문단을 나누는 선의 색상을 지정
+
+ex)
+"a"{column-count:5;
+        text-align:justify;
+      /*column-width:200px;*/
+      column-gap:30px;
+      column-rule-style: solid;
+      column-rule-width: 1px;
+      column-rule-color:red;
+    }
+  <body>
+<div class="a">
+</div>
+</body>
+
+
+*★mediaquery★*
+
+<style>
+@media (min-width:500px){
+        body {background-color:red;
+         }
+       }
+</style>
+위 값이 의미하는 것은 최소값 500px이상일때 body의 background color는 레드가 될것이다라는 의미
+
+
+<style>
+@media (max-width:500px){
+        body {background-color:red;
+         }
+       }
+</style>
+위 값이 의미하는 것은 대갑값 500px이하일때 body의 background color는 레드가 될것이다라는 의미
+
+<style>
+  @media (max-width:600px){
+          body {background-color:green;
+           }
+         }
+@media (max-width:500px){
+        body {background-color:red;
+         }
+       }
+       @media (min-width:601px){
+               body {background-color:blue;
+                }
+              }
+</style>
+
+위 값이 의미하는것은 600px이하일때 body의 background color는 녹색이고 500px이하일때 body의 background color는 레드가 되고 601px이상일때는 녹색이 된다는의미
+(다만 width:600px과 500px을 반대로 코딩했을때에는 500px이하에서도 녹색으로 값이 매겨짐 그 이유는 cascading(코드의 우선순위때문에 그런것임)
+
+
+★중요★
+개발자도구 검사기능에서 토글디바이스 누르면 자동~모바일까지 다양하게 볼수있음 
+여기서는 위 값에따라 색이 변하지않음
+색이 변하기 위해서는 
+head태그안에 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 값을 넣어주면 마찬가지로 색상변경됨
+어떤원리로 이게 작동하는지는 중요하지않음..
+
+
+★미디어 진짜진짜 중요★
+
+@media (max-width:500px) {
+"a" {flex-direction:column;}
+    "a" nav, aside{ border:none;
+                        flex-basis:auto; 
+  }
+main {order:0;}
+nav{order:1}
+aside{order:2}
+
+위 값의 의미는 500px이하일때 열로 바뀌고 a의 nav aside의 선은 없어지며 basis값은 오토로 변한다는 의미
+
+
+*float*
+붕뜨다 부유하다라는 의미이며 기본적으로 글의 본문안에서 이미지를 삽입할때 자연스럽게 하게함
+레이아웃이나 삽화같은작업으로 자주쓰인다고함
+
+<style media="screen">
+img{width:500px;
+float:right;
+margin:20px;}
+</style>
+<body>
+<img src="woman.jpg" alt="woman">
+<p style="clear:both;">"블라블라"</p>
+</body>
+
+위처럼 img를 style로 값을 입력하고 float:right 입력하면 이미지가 오른쪽으로 변경되면서 문구는 왼쪽으로 정렬됨
+반대로 float:left 입력하면 이미지가 왼쪽으로 변경되면서 문구는 오른쪽으로 변경됨 
+추가적으로 이미지와 글자를 겹치게 하고싶지않다.. 글자와 이미지가 독립되게 하고싶다면 위와같이 <"" style="clear:both;">
+
+
+*background*
+배경을 의미함
+<style>
+background-image: url("oo.jpg")
+font-size:"oo"px;
+height:"oo"px;
+</style>
+
+<body>
+블라블라
+</body>
+
+위와같이 입력시 글자안에 이미지 삽입가능함 또한 글자의크기보다 이미지가 작다면 중복적으로 이미지 삽입가능
+옛날 윈도우 배경화면설정할때 바둑알 생각하면됨 
+
+중복되는 이미지를 표시하고싶을땐 {background-repeat:repeat;}
+x축만 중복되게 하고싶을땐 {background-repeat:repeat-x}
+y축만 중복되게 하고싶을땐 {background-repeat:repeat-y}
+중복되지않게 하고싶을땐 {background-repeat:no-repeat;}
+이미지 고정하고 글자만 스크롤 되게하고싶을때 background-attachment:fixed;
+이미지, 글자 둘다 스크롤 하게하고싶을때 background-attachment:scroll; (기본값으로 설정되어있음)
+background의 이미지 배경 사이즈를 설정하고싶을때 2가지 방법이 있음
+background-size:contain = 여백이 생기지만 이미지 전체를 넣을수있는 방법
+background-size:cover = 여백이 없고 이미지가 짤리더라도 화면전체를 채우는 방법
+background-position:"oo" 배경이미지의 위치를 선택할수있음
+
+background 축약형 - 나열하는 순서는 상관없음
+  background:tomato url('dog.jpg') no-repeat fixed center ;}
+색상/사진/이미지반복삽입여부/이미지위치
+
+*filter*
+필터는 이미지나 동영상 등에도 삽입이 가능함
+
+<style>
+img:hover{
+    filter:grayscale(70%) blur(3px);
+  }
+img{
+  transition:all 1s;
+}
+</style>
+  <body>
+<h1>puppy</h1>
+<img src="dog.jpg" alt="JJangA">
+</img>
+</body>
+
+위값처럼 입력하면 마우스커서 가져다 놨을때 필터는 그레이로 바뀌고 블러로 처리됨
+블러의 경우px로설정하고 필터의경우 %설정함
+hover는 이미지에 커서를 놨을때 변하는 효과이며 엄청나게 다양한 효과들이 있으며
+transition:all 1s; 은 이미지가 변하는것을 1초로 설정하는 효과
+filter의 효과를 사용할때 여러가지 필터의 코드를 보면서 삽입하면 될듯함
+
+*blend*
+혼합한다라는 의미를 지니고 있으며 필터는 하나의 이미지에 효과를 주는것이지만 blend는
+두개의 이미지 또는 이미지와 이미지의 사이에 여러가지 기준에 따라 효과를 줄수있음
+크게 2가지로 나누어짐
+background-blend-mode: (a+b=c) 이미지안의 색상과 색상이 겹쳐 다른색상이 되어버림.. 
+mix-blend-mode: (a+b=ab) 글자와 이미지가 혼합된 모습
+
+<style>
+".a"{background-image:url("oo"jpg);
+background-blend-mode:"oo";
+background-color:green;}
+.a:hover{
+  background-color:rgba(255, 0, 0, 0.5);
+  transition:background-color 5s;
+</style>
+
+<body>
+<div class="a">
+  </div>
+</body>
+	
+모드에따라 색상도 달라지며 필터와 다르게 이미지안에 색상과 blend모드를 추가적으로 넣을수있음
+
+추가적으로 .a:hover의 의미는 커서를 .a에 가져다 놨을때 변화를 준다는 것이고
+background-color:rgba(255,0,0,0.5)는  이미지컬러의 투명도에 또다른 변화를 추가적으로줄수있음
+255,0,0 은 (red blue green의 색상임 0.5 가 투명도 0.1~1설정가능)
+transition:background-color 5s;은 위와같이 화면을 변하게 하는시간을 의미 곧 5초안에 이미지값이 위와같이 변한다고 보면됨
+
+
+*transform*
+대체적으로 디자인쪽으로 효과를 줄때 사용되는 태그인것같음
+
+transform:"oo"여러가지 효과가 있음 모두 적는것은 무의미하고 태그 찾아보고 적용해보면 될듯
+
+    transform: scalex(0.5)  
+    transform: scaley(0.5)  
+
+값을 하나씩 입력하는방법이 있으며 위와 같이 입력하면 마지막에 입력한 scaley값만 적용이 됨
+둘다 적용이 되기위해서는  transform: scalex(0.5) scaley(0.5); 입력하면 됨
+다른방법으로는 transform:scale(0.5, 0.5) 이와같이 축약해서 입력하면됨
+
+마우스커서를 가져다 놨을때 변화를 주고싶을땐 아래와 같이 입력하면 1초안에 1.5배가 커지는 효과가 생김
+"oo":hover{
+  transform:scale(1.5);
+  transition:all 1s;
+}
+
+*transition*
+
+transition은 전환이라는 의미이며 css의 속성들의 값이 변경되었을때 그 전환을 자연스럽게 해주는 역할이라고 생각하면 됨
+대체적으로 2가지로 쓰임
+transition-property: = 장면전환을 누구에게 줄것인가?
+transition-duration: = 얼마동안 장면전환의 지속효과를 줄것인가?
+transition-delay: = 클릭시 지정한시간만큼 뒤에 효과가 발생됨
+transition-timing-function: = 커스텀마이징을 할수있는 효과.. 어떤 움직임(시간에 따른 가속이나 감속)으로 반영할 것인지
+
+transition의 경우 hover 또는 active 를 이용하여 사용됨
+hover:는 마우스커서를 가져다놓으면 장면전환이 이루어지고 active의 경우 클릭했을때 장면전환이 이루어짐
+
+a{
+  font-size:3rem;
+  display:inline-block;
+  transition-property:all;
+  transition-duration: 1s;
+}
+a:active{
+  transform:translate(20px, 20px);  = (20px, 20px)의 의미는 x축y축으로 20px만큼 이동한다라는것을 의미함
+  font-size:2rem;
+}
+
+*link&import*
+
+코딩의 기본은 중복되는 코드를 최대한 줄이고 이해하기 쉽게 만드는것이 좋은 코딩이다라고 생각하면 됨
+즉  같은 style코드가 1억개가있다고 가정했을때 주기적으로 변경해야한다고 하면 1억번을 계속 바꿔야하는데
+그렇게되면 파일의용량이나 너무 반복됨에따라 힘들어지기때문에 그럴때 사용하라고 만든것이 link태그이다
+
+ex) h1{color:red} 를 color:blue로 바꾸고싶다고 할때 
+
+link 사용법
+
+기존이었으면 <style> h1{color:blue} </style> 였겠지만 link태그를 사용할땐 <head> "style 사용X" </head>태그안에 style태그를 넣지않고
+<link rel="stylesheet" href=" "oo".css"> 입력후 따로 "oo".css 파일을 만든다음 h1{color:blue} 입력하면 자동으로 적용이 된다.
+
+import 사용법
+
+import태그를 사용할 때 <style>@import url("style.css") </style> 입력하고 (style.css 파일명이 달라질수있음)
+따로 "style".css 파일을 만든다음 h1{color:blue} 입력하면 자동으로 적용이 된다.
+link와 마찬가지로 <link rel="stylesheet" href=" "oo".css"> 입력후 따로 "oo".css 파일 만들고 그파일안에 
+@import url("oo.css") 
+h1{colo:blue} 입력해도 똑같이 적용된다.  (근데 굳이 후자처럼 할필요는 없을듯)
+
+
+*minify*
+css코드의 크기를 경량화하는것 (크기가 클수록 시간이 오래걸림 초심자에겐 조금 필요없는 얘기가 될수도있음)
+(나중에 숙달되면 찾아서 적용해보기)
+
+
+*fontello*
+
+fontello 사용법
+fontello.com 가서 다운받고싶은 폰트 클릭후 다운로드한다.
+그리고 파일 위치를 저장한다 (개발자공부>fontello폴더에 저장)
+그리고 나서 fontello폴더에 저장되어 있는 demo.html 열어보면 우측상단에 show codes 박스버튼이 있음
+클릭하면 코드가 보이는데 ex) 0xe80b 로 되어있다면 내가 적용하고자 하는 html 파일로 돌아가서
+<body>&#xe80b</body> 입력한다. 0xe80b로 되어있는건 html에서 0을 &#로 바꾸기로했기때문임 0은 진짜코드가아님
+그렇게 입력하고나서 <head><link rel="stylesheet" href="저장위치" ex)fontello/css/fontello.css</head> 로 fontello의 이미지코드를를 불러온다
+그리고나서 body{font-family:"fontello"} 입력하면 다운로드했던 폰트의 이미지가 적용된다.
+
+또다른 방법으로는 <link rel="stylesheet" href="fontello/css/fontello.css"> 불러오는것은 동일하나
+<body></body>태그안에 demo폴더를 열어서 다운로드한 이미지들의 이름을 복사해서 <i class="코드이름"></i> 에 붙여넣으면 됨
+
